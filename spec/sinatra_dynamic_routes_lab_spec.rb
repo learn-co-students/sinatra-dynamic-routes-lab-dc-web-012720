@@ -69,18 +69,30 @@ describe App do
       expect(last_response.status).to eq(200)
     end
 
-    it 'concatenates the words and adds a period' do
-      get '/say/stop/rhyming/I/mean/it'
+    # it 'repeats the phrase n times' do
+    #   get '/say/3/show%20me%20the%20money'
 
-      expect(last_response.body).to include('stop rhyming I mean it.')
-    end
+    #   expect(last_response.body.scan('show me the money').size).to eq(3)
+    # end
 
-    it "isn't hard-coded" do
-      get '/say/does/anybody/want/a/peanut'
+    # it "isn't hard-coded" do
+    #   get '/say/4/you%20had%20me%20at%20hello'
 
-      expect(last_response.body).to include('does anybody want a peanut.')
-      expect(last_response.body).to_not include('stop rhyming I mean it.')
-    end
+    #   expect(last_response.body.scan('you had me at hello').size).to eq(4)
+    #   expect(last_response.body).to_not include('show me the money')
+    # end
+    # it 'concatenates the words and adds a period' do
+    #   get '/say/stop/rhyming/I/mean/it'
+
+    #   expect(last_response.body).to include('stop rhyming I mean it.')
+    # end
+
+    # it "isn't hard-coded" do
+    #   get '/say/does/anybody/want/a/peanut'
+
+    #   expect(last_response.body).to include('does anybody want a peanut.')
+    #   expect(last_response.body).to_not include('stop rhyming I mean it.')
+    # end
   end
 
   describe 'GET /:operation/:number1/:number2' do
